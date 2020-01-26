@@ -1,0 +1,75 @@
+<header class="header">
+    <div class="logo">
+        <img src="../../assets/images/logo.png" alt="logo" />
+    </div>
+    <div class="admin" (click)="isNav=!isNav">
+        <span><i class="fa fa-user-circle"></i> Admin</span>
+        <ul *ngIf="isNav">
+            <li (click)="logout()" >Logout</li>
+        </ul>
+    </div>
+</header>
+<section class="content pull-left width100">
+    <aside class="pull-left">
+        <ul>
+            <li>
+                <i class="fa fa-address-card"></i> <span class="menu-txt">Dashboard</span>
+            </li>
+        </ul>
+    </aside>
+    <main class="pull-left">
+        <div class="page-title pull-left width100">Recruiter Dashboard</div>
+        <div class="main-con pull-left width100">
+            <div class="tiles-con width100">
+                <div *ngFor="let item of states | keyvalue" class="tile">
+                    <div class="square"></div>
+                    <div class="col-txt">{{item.key}}</div>
+                    <h4>{{item.value}}</h4>
+                    <div class="col-txt gray-clr">candidates</div>
+                </div>
+            </div>
+            <div class="title-2">Scheduled List</div>
+            <div class="table">
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource">
+
+                        <ng-container matColumnDef="id">
+                            <th mat-header-cell *matHeaderCellDef> Candidate Id </th>
+                            <td mat-cell *matCellDef="let element"> {{element.candidateId}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="domain">
+                            <th mat-header-cell *matHeaderCellDef> domain </th>
+                            <td mat-cell *matCellDef="let element"> {{element.domain}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="yearOfExperience">
+                            <th mat-header-cell *matHeaderCellDef> Years of Exp. </th>
+                            <td mat-cell *matCellDef="let element"> {{element.yearOfExperience}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="recruiterName">
+                            <th mat-header-cell *matHeaderCellDef> Recruiter Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.recruiterName}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="interviewType">
+                            <th mat-header-cell *matHeaderCellDef> Interview Type </th>
+                            <td mat-cell *matCellDef="let element"> {{element.interviewType}} </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>

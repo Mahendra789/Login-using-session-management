@@ -1,0 +1,155 @@
+header.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 1px 3px #dedede;
+}
+.logo {
+    padding: 0 15px;
+    text-align: center;
+}.logo img {
+    float: left;
+    width: 50px;
+    padding: 9px;
+}
+.admin {
+    padding: 0 15px;
+    cursor: pointer;
+    position: relative;
+}
+.admin span {
+    border: 1px solid #d8d8d8;
+    padding: 3px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #565454;
+}
+.admin ul {
+    position: absolute;
+    bottom: -22px;
+    text-align: center
+}
+.admin ul li {
+    font-size: 12px;
+    border: 1px solid #eee;
+    background: #f5f5f5;
+    cursor: pointer;
+    color: #616161;
+    padding: 0px 7px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style-type: none;
+}
+.content{
+    margin-top: 50px;
+    font-size: 14px;
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}
+aside{
+    width: 15%
+}
+aside ul li {
+    background-color: #296eb4;
+    color: #fff;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+main {
+    width: 85%;
+}
+.pull-left{
+    float: left;
+}
+.width100{
+    width: 100%
+}
+.page-title {
+    padding: 7px 15px;
+    color: #6d6d6d;
+    font-size: 15px;
+}
+.main-con {
+    background-color: #f3f5f8;
+    padding: 15px;
+    height: calc(100vh - 50px);
+    overflow: scroll;
+}
+.tiles-con{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tile{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 19%;
+    text-align: center;
+    padding: 15px;
+    text-transform: capitalize;
+    color: #656565;
+}
+.square {
+    height: 35px;
+    width: 46px;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: 0px 1px 4px #5d85af;
+}
+.col-txt {
+    margin-top: 10px;
+}
+.gray-clr {
+    color: #aaa;
+}
+.title-2 {
+    padding: 13px 10px;
+    color: #296eb4;
+    background-color: #fff;
+    margin-top: 1%;
+    font-size: 15px;
+    box-shadow: 0 4px 5px 0px #dcdcdc;
+}
+table {
+    width: 100%;
+  }
+
+  th.mat-header-cell {
+    background-color: #296eb4;
+    color: #fff;
+    padding: 10px !important;
+    border: none;
+}
+td.mat-cell {
+    padding: 10px !important;
+}
+
+
+@media(min-width:320px) and (max-width:767px) {
+        .menu-txt{
+            display: none;
+        }
+        aside ul li {
+            font-size: 16px;
+            text-align: center;
+            padding: 6px ;
+        }
+        .tiles-con {
+            display: block !important;
+            width: 100%;
+        }
+        .tile {
+            width: 100% !important;
+            margin-bottom: 15px;
+        }
+        .mat-elevation-z8{
+            overflow: scroll;
+        }
+    }
